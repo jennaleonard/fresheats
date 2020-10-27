@@ -1,0 +1,24 @@
+// * font-family: 'Merriweather', serif;
+// * font-family: 'Montserrat', sans-serif;
+
+$primary-color: #84b252;
+$secondary-color:#5e1f66;
+
+@import './header';
+@import './section';
+
+body {
+    margin: 0;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Merriweather', serif;
+}
+
+p,
+li,
+a {
+    font-family: 'Montserrat', sans-serif;
+}

@@ -1,0 +1,39 @@
+@mixin flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header {
+    @include flex-between;
+    flex-wrap: wrap;
+    z-index: 10;
+    position: absolute;
+    background: #ffffff66;
+    width: 100%;
+
+    .nav {
+        display: none;
+    }
+
+    // .nav {
+    //     display: flex;
+    //     justify-content: space-evenly;
+
+    //     li {
+    //         display: inline-block;
+    //         margin: 10px;
+    //     }
+
+    //     a {
+    //         text-decoration: none;
+    //     }
+    // }
+}
+
+
+#logo {
+    max-width: 80%;
+    height: auto;
+    margin: 10px 20px 10px 10px;
+}

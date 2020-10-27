@@ -1,0 +1,70 @@
+$primary-color: #84b252;
+$secondary-color:#5e1f66;
+
+@mixin flexColumnCenter {
+    display: flex;
+    flex-flow: wrap column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide-container {
+    @include flexColumnCenter();
+    width: 100%;
+    background-image: url('/dist/images/slide-1.jpg');
+    background-size: cover;
+    background-position: top center;
+    height: 500px;
+    width: 100%;
+    background-repeat: no-repeat;
+    z-index: 1;
+
+    .content {
+        text-align: left;
+    }
+
+    h1 {
+        color: $secondary-color;
+    }
+
+    p {
+        color: #fff;
+    }
+    
+}
+
+.how {
+    @include flexColumnCenter();
+    height: 300px;
+
+    img {
+        display: none;
+    }
+}
+
+.choose {
+    @include flexColumnCenter();
+
+    img {
+        max-width: 97%;
+        height: auto;
+        margin: 2px 0;
+    }
+
+
+}
+
+.menu {
+
+}
+
+.login {
+    @include flexColumnCenter();
+
+    a {
+        text-decoration: none;
+        margin: 10px;
+    }
+
+}
