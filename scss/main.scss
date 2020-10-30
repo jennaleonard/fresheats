@@ -7,6 +7,10 @@ $secondary-color:#5e1f66;
 @import './header';
 @import './section';
 
+html {
+    font-size: 62.5%;
+}
+
 body {
     margin: 0;
 }
@@ -17,8 +21,23 @@ h3 {
     font-family: 'Merriweather', serif;
 }
 
+h2 {
+    margin-bottom: .5em;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
 p,
 li,
-a {
+a,
+span {
     font-family: 'Montserrat', sans-serif;
+    font-size: 1.6rem;
+}
+
+h2 {
+    color: $secondary-color;
+    font-size: 3.2rem;
 }

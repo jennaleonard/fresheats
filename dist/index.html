@@ -6,18 +6,21 @@
     <title>Jenna's FreshEats Page</title>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&family=Montserrat&display=swap" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-    <header>
+    <header class="clearfix">
         <img src="images/fresh-eats-logo.png" alt="fresheats logo" id="logo">
-        <a><img src="symbols/hamburger.png" width="36px" height="26px" id="hamburger"></a>
+        <span class="nav-button"><img src="symbols/hamburger.png" width="36px" height="26px" id="hamburger" alt="hamburger menu"></span>
         <!-- <img src="symbols/x.png" width="22px" height="22px" id="x"> -->
-        <ul class="nav">
-            <li><a href="#how">How it works</a></li>
-            <li><a href="#choose">Choose a plan</a></li>
-            <li><a href="#menu">View our Menu</a></li>
-            <li><a href="#login">Log In or Sign-Up</a></li>
-        </ul>
+        <nav class="nav-closed">
+            <ul>
+                <li><a href="#how">How it works</a></li>
+                <li><a href="#choose">Choose a plan</a></li>
+                <li><a href="#menu">View our Menu</a></li>
+                <li><a href="#login">Log In or Sign-Up</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
         <section class="slide-container">
@@ -27,51 +30,83 @@
                 </div>
         </section>
         <section class="how" id="how">
-            <h2>How it works</h2>
-            <img src="images/how.jpg" alt="overhead view of small bowls filled with various fruits and ingredients" width="500" height="675">
-            <p>Vivamus tempus, diam in iaculis interdum, ligula odio varius ligula, et pretium dui mauris a leo.</p>
+            <div class="how-text">
+                <h2>How it works</h2>
+                <p>Vivamus tempus, diam in iaculis interdum, ligula odio varius ligula, et pretium dui mauris a leo.</p>
+            </div>
+            <div class="how-image">
+                <img src="images/how.jpg" alt="overhead view of small bowls filled with various fruits and ingredients" width="500" height="675">
+            </div>
         </section>
         <section class="choose" id="choose">
-            <h2>Choose Your Plan</h2>
-            <p>Vivamus tempus, diam in iaculis interdum, ligula odio varius ligula, et pretium dui mauris a leo.</p>
-            <div>
-                <img src="images/fruit-salad.jpg" alt="fruit salad" width="300" height="300">
-                <img src="images/pom-meal-crop.jpg" alt="pomegranate dish" width="300" height="300">
-                <img src="images/pork-slider.jpg" alt="pork slider" width="300" height="300">
-                <img src="images/soup.jpg" alt="soup" width="300" height="300">
-                <img src="images/pancakes.jpg" alt="pancakes" width="300" height="300">
-                <img src="images/ramen.jpg" alt="ramen" width="300" height="300">
+            <div class="choose-text">
+                <h2>Choose Your Plan</h2>
+                <p>Vivamus tempus, diam in iaculis interdum, ligula odio varius ligula, et pretium dui mauris a leo.</p>
+            </div>
+            <div class="food">
+                <div class="item">
+                    <img src="images/fruit-salad.jpg" alt="fruit salad" width="300" height="300">
+                </div>
+                <div class="item">
+                    <img src="images/pom-meal-crop.jpg" alt="pomegranate dish" width="300" height="300">
+                </div>
+                <div class="item">
+                    <img src="images/pork-slider.jpg" alt="pork slider" width="300" height="300">
+                </div>
+                <div class="item">
+                    <img src="images/soup.jpg" alt="soup" width="300" height="300">
+                </div>
+                <div class="item">
+                    <img src="images/pancakes.jpg" alt="pancakes" width="300" height="300">
+                </div>
+                <div class="item">
+                    <img src="images/ramen.jpg" alt="ramen" width="300" height="300">
+                </div>
             </div>
         </section>
         <section class="menu" id="menu">
             <h2>Sample Menu</h2>
-            <h3>tincidunt nulla accumsan</h3>
-            <p>Vivamus ornare, arcu sed feugiat rutrum, lectus sapien cursus ante, imperdiet egestas ante risus vel mauris. Fusce ac hendrerit ligula.</p>
-            <h3>tincidunt nulla accumsan</h3>
-            <p>Vivamus ornare, arcu sed feugiat rutrum, lectus sapien cursus ante, imperdiet egestas ante risus vel mauris. Fusce ac hendrerit ligula.</p>
-            <h3>tincidunt nulla accumsan</h3>
-            <p>Vivamus ornare, arcu sed feugiat rutrum, lectus sapien cursus ante, imperdiet egestas ante risus vel mauris. Fusce ac hendrerit ligula.</p>
-            <h3>tincidunt nulla accumsan</h3>
-            <p>Vivamus ornare, arcu sed feugiat rutrum, lectus sapien cursus ante, imperdiet egestas ante risus vel mauris. Fusce ac hendrerit ligula.</p>
-            <h3>tincidunt nulla accumsan</h3>
-            <p>Vivamus ornare, arcu sed feugiat rutrum, lectus sapien cursus ante, imperdiet egestas ante risus vel mauris. Fusce ac hendrerit ligula.</p>
-            <h3>tincidunt nulla accumsan</h3>
-            <p>Vivamus ornare, arcu sed feugiat rutrum, lectus sapien cursus ante, imperdiet egestas ante risus vel mauris. Fusce ac hendrerit ligula.</p>
-            <h3>tincidunt nulla accumsan</h3>
-            <p>Vivamus ornare, arcu sed feugiat rutrum, lectus sapien cursus ante, imperdiet egestas ante risus vel mauris. Fusce ac hendrerit ligula.</p>
+            <div class="menu-content">
+                <h3>tincidunt nulla accumsan</h3>
+                <p>Vivamus ornare, arcu sed feugiat rutrum, lectus sapien cursus ante, imperdiet egestas ante risus vel mauris. Fusce ac hendrerit ligula.</p>
+                <h3>tincidunt nulla accumsan</h3>
+                <p>Vivamus ornare, arcu sed feugiat rutrum, lectus sapien cursus ante, imperdiet egestas ante risus vel mauris. Fusce ac hendrerit ligula.</p>
+                <h3>tincidunt nulla accumsan</h3>
+                <p>Vivamus ornare, arcu sed feugiat rutrum, lectus sapien cursus ante, imperdiet egestas ante risus vel mauris. Fusce ac hendrerit ligula.</p>
+                <h3>tincidunt nulla accumsan</h3>
+                <p>Vivamus ornare, arcu sed feugiat rutrum, lectus sapien cursus ante, imperdiet egestas ante risus vel mauris. Fusce ac hendrerit ligula.</p>
+                <h3>tincidunt nulla accumsan</h3>
+                <p>Vivamus ornare, arcu sed feugiat rutrum, lectus sapien cursus ante, imperdiet egestas ante risus vel mauris. Fusce ac hendrerit ligula.</p>
+                <h3>tincidunt nulla accumsan</h3>
+                <p>Vivamus ornare, arcu sed feugiat rutrum, lectus sapien cursus ante, imperdiet egestas ante risus vel mauris. Fusce ac hendrerit ligula.</p>
+                <h3>tincidunt nulla accumsan</h3>
+                <p>Vivamus ornare, arcu sed feugiat rutrum, lectus sapien cursus ante, imperdiet egestas ante risus vel mauris. Fusce ac hendrerit ligula.</p>
+            </div>
         </section>
         <section class="login" id="login">
             <h2>Join</h2>
-            <p>lectus sapien cursus ante, imperdiet egestas ante risus vel mauris.</p>
-            <a href="#">Sign-Up</a>
-            <a href="#">Log In</a>
+            <div class="login-text">
+                <p>lectus sapien cursus ante, imperdiet egestas ante risus vel mauris.</p>
+                <div class="buttons">
+                    <a href="#">Sign-Up</a>
+                    <span>or</span>
+                    <a href="#">Log In</a>
+                </div>
+            </div>
         </section>
     </main>
     <footer>
         <ul>
-            <li>Copyright</li>
-            <li><a>Contact</a></li>
+            <li>Copyright&#169; 2020</li>
+            <li><a href="#">Contact</a></li>
         </ul>
     </footer>
+
+    <script>
+        $('.nav-button').on('click', function(){
+  		$('nav').toggleClass('nav-closed');
+	    });
+    </script>
+    
 </body>
 </html>

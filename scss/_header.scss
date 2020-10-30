@@ -1,39 +1,117 @@
+/* styling for header and nav */
+
+// mixins 
+
 @mixin flex-between {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+// variables
+
+$layout-breakpoint-tablet: 436px;
+$layout-breakpoint-desktop: 800px;
+$layout-breakpoint-large: 960px;
+$layout-breakpoint-xl: 1190px;
+
+
 header {
     @include flex-between;
     flex-wrap: wrap;
     z-index: 10;
-    position: absolute;
-    background: #ffffff66;
-    width: 100%;
+    position: relative;
+    height: 70px;
+    padding: .5em;
+    background: $primary-color;
 
-    .nav {
-        display: none;
+    .nav-button {
+        cursor: pointer;
     }
 
-    // .nav {
-    //     display: flex;
-    //     justify-content: space-evenly;
+    nav {
+        position: absolute;
+        top: 70px;
+        justify-self: center;
+        width: 100%;
+    }
 
-    //     li {
-    //         display: inline-block;
-    //         margin: 10px;
-    //     }
+    .nav-closed {
+        display: none;  
+    }
 
-    //     a {
-    //         text-decoration: none;
-    //     }
-    // }
+
+    ul {
+        background: #fff;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+
+        li {
+            display: block;
+            margin: 1em;
+        }
+
+        a {
+            text-decoration: none;
+            color: $primary-color;
+            width: 100%; 
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
 }
 
+@media (min-width: $layout-breakpoint-large) {
+    header {
+
+        .nav-button {
+            display: none;
+        }
+
+        .nav-closed {
+            display: inline-block;
+            width: 100%;
+        }
+
+        nav {
+            top: 0;
+            width: 60%;
+            position: absolute;
+            align-self: flex-end;
+        }
+
+        ul {
+            background: none;
+            display: flex;
+            flex-flow: wrap;
+            align-items: center;
+            justify-content: flex-end;
+            margin-top: 1.4em;
+            
+            li {
+                display: inline-block;
+            }
+
+            a {
+                color: #fff;
+                font-weight: bold;
+            }
+        }
+
+        
+    }
+}
+
+/* logo styling */
 
 #logo {
-    max-width: 80%;
-    height: auto;
-    margin: 10px 20px 10px 10px;
+    display: inline-block;
+    max-width: 60%;
+    min-width: 250px;
+    height: auto; 
+    margin-left: 1.2em;   
 }

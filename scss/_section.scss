@@ -1,5 +1,20 @@
+/* styling for the main sections including footer */
+
+/* colors */
+
 $primary-color: #84b252;
 $secondary-color:#5e1f66;
+$black: #231f20;
+$white: #ffffffcf;
+
+/* break points */
+
+$layout-breakpoint-tablet: 436px;
+$layout-breakpoint-desktop: 800px;
+$layout-breakpoint-large: 910px;
+$layout-breakpoint-xl: 1190px;
+
+// mixins
 
 @mixin flexColumnCenter {
     display: flex;
@@ -9,6 +24,22 @@ $secondary-color:#5e1f66;
     align-items: center;
 }
 
+@mixin flexRowCenter {
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin paragraphText {
+    text-align: justify;
+    // padding: 0 1.2em;
+}
+
+/* begin main sections */
+
+// slide section
+
 .slide-container {
     @include flexColumnCenter();
     width: 100%;
@@ -16,55 +47,318 @@ $secondary-color:#5e1f66;
     background-size: cover;
     background-position: top center;
     height: 500px;
-    width: 100%;
     background-repeat: no-repeat;
     z-index: 1;
 
     .content {
+        // text-align: left;
+        background: rgba($secondary-color, .85);
+        width: 60%;
         text-align: left;
+        padding: 1em 3em 1em 4em;
+        margin-left: 1.2em;
+        align-self: flex-start;
     }
 
     h1 {
-        color: $secondary-color;
+        color: $primary-color;
+        font-size: 3.3rem;
+        margin-top: .3em;
     }
 
     p {
-        color: #fff;
+        @include paragraphText();
+        color: $white;
+        font-size: 1.6rem;
+        margin-top: -1em;
     }
-    
 }
+
+// slide section breakpoints
+
+@media (min-width: $layout-breakpoint-large) {
+    .slide-container { 
+        
+        .content {
+            width: 55%;
+            justify-self: center;
+        }
+    }
+}
+
+// how section
 
 .how {
     @include flexColumnCenter();
-    height: 300px;
+    height: 250px;
+    background: $primary-color;
+
+    .how-text {
+        width: 85%;
+    }
+
+    p {
+        @include paragraphText();
+        color: #fff;
+    }
 
     img {
         display: none;
     }
 }
 
+// how break points
+
+@media (min-width: $layout-breakpoint-large) {
+    .how {
+        @include flexRowCenter();
+        height: 500px;
+        justify-content: space-between;
+
+        .how-text {
+            max-width: 40%;
+            margin: 0 auto;
+
+            h2 {
+                margin-bottom: 1.2em;
+            }
+        }
+
+        .how-image {
+            max-width: 100%;
+            max-height: 100%;
+            overflow: hidden;
+        }
+
+        img {
+        display: inline-block;
+        max-width: 300%;
+        height: auto;
+        justify-self: flex-end;
+        }
+    }
+}
+
+// choose section 
+
 .choose {
     @include flexColumnCenter();
 
-    img {
-        max-width: 97%;
-        height: auto;
-        margin: 2px 0;
+    h2 {
+        margin-top: 1.5em;
     }
 
+    .choose-text {
+        justify-self: center;
+        width: 85%;
+    }
+
+    .food {
+        margin-bottom: 6em;
+    }
+
+    .item {
+        max-width: 85%;
+        border: 2.5px solid rgba($secondary-color, .6);
+        border-radius: 2px;
+        box-sizing: border-box;
+        margin: 0 auto;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        padding: 0;
+    }
+
+    p {
+        color: $black;
+        @include paragraphText();
+        // width: 85%;
+        margin-bottom: 2.5em;
+    }
 
 }
+
+/* begin choose breakpoints */
+
+@media (min-width: $layout-breakpoint-tablet) {
+    .choose {
+        p {
+            text-align: center;
+        }
+
+        .food {
+           display: flex;
+           flex-flow: wrap row; 
+           justify-content: center;
+        }
+
+        .item {
+            max-width: 42%;
+            margin: .2em;
+        }
+    }
+}
+
+@media (min-width: $layout-breakpoint-xl) {
+    .choose {
+        .food {
+            justify-content: center;
+            max-width: 80%;
+        }
+    }
+}
+
+// menu section
 
 .menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background: $secondary-color;
 
+    h2 {
+        justify-self: center;
+        color: #fff;
+        margin-top: 1.5em;
+    }
+
+    .menu-content {
+        width: 85%;
+        margin-bottom: 5em;
+    }
+
+    h3 {
+        color: $primary-color;
+    }
+
+    p {
+        color: $white;
+        @include paragraphText();
+    }
 }
 
+/* menu breakpoints */
+
+@media (min-width: $layout-breakpoint-xl) {
+    .menu-content {
+        max-width: 75%;
+        margin-top: 5em;
+    }
+    h2 {
+        align-self: center;
+    }
+}
+
+// join/login section
+
 .login {
-    @include flexColumnCenter();
+    @include flexRowCenter();    
+    height: 300px;
+    margin-bottom: 9.5em;
+
+    h2 {
+        margin-top: 1.5em;
+    }
+
+    .login-text {
+        width: 85%;
+        align-self: center;
+    }
+
+    p {
+        @include paragraphText();
+        color: $black;
+        margin-bottom: 2em;
+    }
+
+    .buttons {
+        display: flex;
+        flex-flow: wrap column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
 
     a {
         text-decoration: none;
-        margin: 10px;
+        display: inline-block;
+        background: $primary-color;
+        padding: .8em;
+        margin: .2em;
+        border-radius: 3px;
+        color: #fff;
+        font-size: 1.8rem;
+        box-sizing: border-box;
+        width: 280px;
+
+        &:hover {
+            background:#fff;
+            color: $primary-color;
+            // border: 1px solid $primary-color;
+            box-shadow: inset 0px 0px 0px 1px $primary-color;
+        }
     }
 
+    span {
+        color: $black;
+    }
+
+}
+
+/* login breakpoints */
+
+@media (min-width: $layout-breakpoint-tablet) {
+    .login {
+        h2 {
+            width: 100%;
+            text-align: center;
+        }
+    }
+}
+
+@media (min-width: $layout-breakpoint-desktop) {
+    .login {
+        .login-text {
+            display: flex;
+            flex-flow: wrap row;
+            align-items: center;
+            align-content: flex-start;
+            justify-content: space-evenly;
+        }
+        
+        p {
+            max-width: 30%;
+        }
+    }
+}
+
+/*  begin footer */
+
+footer {
+    @include flexRowCenter();
+    background: $primary-color;
+    width: 100%;
+    height: 70px;
+
+    ul {
+        text-align: center;
+        padding: 0;
+    }
+
+    li {
+        display: inline-block;
+        margin: 1em;        
+        color: $secondary-color;
+    }
+
+    a {
+        text-decoration: none;
+        color: $secondary-color;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }
