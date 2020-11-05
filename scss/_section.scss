@@ -43,7 +43,7 @@ $layout-breakpoint-xl: 1190px;
 .slide-container {
     @include flexColumnCenter();
     width: 100%;
-    background-image: url('/dist/images/slide-1.jpg');
+    background-image: url('images/slide-1.jpg');
     background-size: cover;
     background-position: top center;
     height: 500px;
